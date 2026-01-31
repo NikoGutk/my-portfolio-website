@@ -1,0 +1,646 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+    text-decoration: none;
+    scroll-behavior: smooth;
+    list-style: none;
+}
+
+header {
+    position: fixed;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+    background-color: #1f4037;
+    backdrop-filter: blur(8px);
+    color:white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 3rem;
+    z-index: 1000;
+}
+
+.logo {
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-wrap: nowrap;
+    transition: 0.6s ease-in-out;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+    transition-duration: 0.2s;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2.4rem;
+}
+
+li a {
+    position: relative;
+    color: white;
+    font-weight: 300;
+}
+
+li a::before{
+    position: absolute;
+    content: '';
+    width: 0;
+    left: 0;
+    height: 5px;
+    top: 25px;
+    border-radius: 1rem;
+    transition: 0.3s ease-in-out;
+    background: linear-gradient(to right, #1f4037,#99f2c8);
+}
+
+li a:hover::before{
+    width: 100%;
+}
+
+.visit-btn {
+  padding: 0.8rem 1.5rem;
+  border-radius: 3rem;
+  border: none;
+  font-weight: 500;
+  font-size: 1rem;
+  color: white;
+  cursor: pointer;
+  text-wrap: nowrap;
+  
+  /* --- The Animated Gradient Logic --- */
+  
+  /* 1. Create a 3-part gradient: Dark -> Light -> Dark */
+  background: linear-gradient(
+    to right, 
+    #1f4037 0%, 
+    #99f2c8 50%, 
+    #1f4037 100%
+  );
+  
+  /* 2. Make the background twice as wide as the button */
+  background-size: 200% 100%;
+  
+  /* 3. Start with the right-side (dark) part visible */
+  background-position: 100% 0;
+  
+  /* 4. Transition the position instead of the background image */
+  transition: background-position 0.3s ease-in-out, transform 0.2s ease;
+}
+
+.visit-btn:hover {
+  /* 5. Slide the background to show the light "line" passing through */
+  background-position: 0% 0;
+  transform: scale(1.04);
+}
+
+#menu-icon {
+    font-size: 2rem;
+    display: none;
+}
+
+section {
+    min-height: 100vh;
+    padding: 8rem 12%;
+    width: 100%;
+    position: relative;
+}
+
+.about {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about .about-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10rem;
+}
+
+.about img {
+    width: 30vw;
+    border-radius: 50%;
+}
+
+.info-box {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.info-box h3 {
+    font-size: 1.8rem;
+    font-weight: 500;
+    opacity: 0.8;
+}
+
+.info-box h1 {
+    font-size: 4rem;
+    font-weight: 600;
+}
+
+.info-box span {
+  background: linear-gradient(to right, #1f4037 0%, #99f2c8 50%, #1f4037 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text; 
+  background-clip: text;
+  color: transparent;
+  font-size: 2rem;
+  
+  /* Performance boost */
+  will-change: background-position;
+  
+  /* The animation */
+  animation: shine 4.5s linear infinite;
+}
+
+/* Respect users who don't want motion */
+@media (prefers-reduced-motion: reduce) {
+  .info-box span {
+    animation: none;
+    background: #1f4037; /* Fallback to a solid color */
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+}
+
+@keyframes shine {
+  to { background-position: 200% center; }
+}
+
+.btn-group {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-group a {
+  text-decoration: none; /* Removes the underline */
+  color: inherit;        /* Forces the link to use the icon's color instead of blue */
+  display: inline-block; /* Essential for your 'scale' animation to work on the link */
+}
+
+.btn {
+    color: inherit;
+    border-radius: 3rem;
+    padding: 0.5rem 1.5rem;
+    border: 3px solid #1f4037;
+    cursor: pointer;
+    font-weight: 500;
+    text-wrap: nowrap;
+    transition: 0.2s ease-in-out;
+}
+
+.btn:hover {
+    background-color: #1f4037;
+    color: white;
+}
+
+.socials {
+    display: flex;
+    gap: 1rem;
+}
+
+.socials a {
+  text-decoration: none; /* Removes the underline */
+  color: inherit;        /* Forces the link to use the icon's color instead of blue */
+  display: inline-block; /* Essential for your 'scale' animation to work on the link */
+}
+
+.socials i {
+    font-size: 2.5rem;
+    cursor: pointer;
+    transition: 0.1s ease-in-out;
+}
+
+.socials i:hover {
+    transform: scale(1.2);
+    background-color: transparent;
+    color: #1f4037;
+}
+
+
+.section-title {
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 600;
+    margin-bottom: 3rem;
+}
+
+.experience-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+}
+
+.experience img {
+    width: 24vw;
+    border-radius: 3rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.grid-card {
+    border: solid #1f4037;
+    border-radius: 3rem;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    justify-content: left;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.grid-card:hover {
+    transform: scale(1.02);
+    background-color: #1f4037;
+    color: white;
+}
+
+.grid-card i {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.grid-card span {
+    font-size: 1.5rem;
+    font-weight: 500;
+    background: linear-gradient(to right, #1f4037 0%, #99f2c8 50%, #1f4037 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text; 
+    background-clip: text;
+    color: transparent;
+
+    /* Performance boost */
+  will-change: background-position;
+  
+  /* The animation */
+  animation: shine 3.5s linear infinite;
+}
+
+.grid-card:hover span {
+  /* This ensures the gradient/fallback stays visible over the new dark background */
+  background: #99f2c8; 
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .grid-card span {
+    animation: none;
+    background: #1f4037; /* Fallback to a solid color */
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+}
+
+::-webkit-scrollbar{
+    width: 20px;
+}
+
+::-webkit-scrollbar-thumb{
+    background: linear-gradient(to top, #1f4037 0%, #99f2c8 50%, #1f4037 100%);
+}
+
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 1.5rem;
+    border: solid #1f4037;
+    border-radius: 3rem;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.project-card img {
+    position: relative;
+    width: 7rem;
+    right: -10px;
+}
+
+.project-card:hover {
+    background-color: #1f4037;
+    color: white;
+    transform: translateY(-10px)scale(1.02);
+}
+
+.project-card video {
+    width: 12vw;
+}
+
+.project-card:hover .btn {
+    border: 2px solid white;
+    color: white;
+}
+
+.project-card:hover .btn:hover {
+    border: 2px solid white;
+    background-color: white;
+    color: #1f4037;
+}
+
+.project-card h3 {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+/* Container for the whole section */
+#contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh; /* Gives it breathing room */
+    padding: 4rem 2rem;
+    width: 100%;
+    margin-bottom: 5rem;
+}
+
+/* The Form Container - Controls the max width */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 800px; /* Prevents it from getting too wide on big screens */
+    margin-top: 2rem;
+}
+
+/* The Row for Name and Email */
+.input-row {
+    display: flex;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+/* Common Styles for All Inputs */
+.contact-form input, 
+.contact-form textarea {
+    width: 100%; /* Flexible width */
+    padding: 1.2rem 1.5rem; /* Comfortable padding */
+    border-radius: 1.5rem;
+    border: 2px solid #1f4037;
+    background: transparent;
+    font-size: 1.1rem;
+    color: #1f4037;
+    outline: none;
+    transition: 0.2s;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Specific styling for the Textarea */
+.contact-form textarea {
+    resize: vertical; /* Allows expanding down, but not sideways */
+    min-height: 200px;
+}
+
+/* Focus State (Optional: Glow effect) */
+.contact-form input:focus, 
+.contact-form textarea:focus {
+    border-color: #99f2c8; /* Your mint color */
+    box-shadow: 0 0 10px rgba(153, 242, 200, 0.2);
+}
+
+.input {
+    position: relative;
+}
+
+.input i {
+    position: absolute;
+    font-size: 4rem;
+    top: 50%;
+    left: 10px;
+    transform: translate(50%, -50%);
+}
+
+footer {
+    bottom: 0;
+    left: 0;
+    height: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+footer ul {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+footer ul li a {
+    color: #1f4037;
+    font-weight: 500;
+}
+
+.copyright {
+    font-size: 300;
+    margin-top: 2rem;
+    padding: 1rem;
+}
+
+
+/* --- RESPONSIVENESS (The Clean Version) --- */
+
+/* 1. Large Laptops (1280px) */
+@media (max-width: 1280px) {
+    header {
+        padding: 1rem 2rem;
+        gap: 2rem;
+    }
+    .about .about-container {
+        gap: 3rem;
+    }
+    .experience-info {
+        flex-direction: column;
+    }
+    /* Fix input sizes for laptops */
+    .contact-form {
+        width: 90%;
+    }
+}
+
+/* 2. Tablets & Mobile Phones (768px and below) */
+/* This is where we switch to the Hamburger Menu */
+@media (max-width: 768px) {
+    
+    /* --- Header & Menu Logic --- */
+    header {
+        justify-content: space-between; /* Pushes Logo left, Icon right */
+        padding: 1rem 2rem;
+    }
+
+    /* Show the hamburger icon */
+    #menu-icon {
+        display: block;
+        z-index: 1001; /* Ensure it sits on top */
+    }
+
+    /* Hide the "Visit GitHub" button on mobile to save space */
+    .visit-btn {
+        display: none;
+    }
+
+    /* The Dropdown Menu Styling */
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1rem;
+        background: #1f4037;
+        border-radius: 1rem 1rem; /* Rounded bottom corners */
+        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        margin-top: 0.5rem;
+        
+        /* Hidden by default */
+        display: none; 
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
+
+    /* The Class JS adds to show the menu */
+    .nav-links.active {
+        display: flex;
+    }
+
+    /* --- Other Mobile Adjustments --- */
+    .about-container {
+        flex-direction: column;
+    }
+    
+    .about img, .experience-info img {
+        width: 70vw; /* Make images responsive */
+    }
+
+    .grid {
+        grid-template-columns: 1fr; /* Stack cards vertically */
+    }
+
+    /* Contact Form Stacking */
+    .input-row {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .contact-form {
+        width: 100%;
+    }
+
+    footer ul {
+        gap: 1.5rem;
+    }
+}
+
+/* --- PROJECT PAGE STYLES --- */
+
+.project-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Adjust padding to account for fixed header */
+    padding-top: 8rem; 
+}
+
+.project-container {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr; /* Video gets slightly more space */
+    gap: 4rem;
+    max-width: 1200px;
+    width: 100%;
+    align-items: start; /* Aligns text to the top */
+}
+
+/* Video Styling */
+.media-stack img {
+    width: 100%;
+    border-radius: 2rem;
+    border: 4px solid #1f4037; /* Matches your theme */
+    box-shadow: 0 10px 20px rgba(31, 64, 55, 0.2);
+}
+
+/* Text Content Styling */
+.info-content h3 {
+    font-size: 1.8rem;
+    color: #1f4037;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.info-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 2rem;
+}
+
+/* Tech Stack List */
+.tech-stack ul, .features-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-bottom: 2rem;
+}
+
+.tech-stack li, .features-list li {
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #333;
+}
+
+.tech-stack i {
+    color: #99f2c8; /* Mint accent icon */
+    background-color: #1f4037; /* Dark background for icon */
+    padding: 5px;
+    border-radius: 50%;
+    font-size: 0.8rem;
+}
+
+.features-list {
+    list-style: disc inside;
+    padding-left: 1rem;
+}
+
+/* Mobile Responsiveness for Project Page */
+@media (max-width: 900px) {
+    .project-container {
+        grid-template-columns: 1fr; /* Stack vertically on tablets/phones */
+        gap: 2rem;
+    }
+
+    .section-title {
+        font-size: 2.5rem; /* Smaller title on mobile */
+    }
+}

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nikolay Gutnyk Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <header class="header">
+        <a href="#" class="logo"><span>Nikolay Gutnyk</span></a>
+
+        <ul class="nav-links">
+            <li>
+                <a href="#about">About</a>
+            </li>
+
+            <li>
+                <a href="#experience"><span>Experience</span></a>
+            </li>
+
+            <li>
+                <a href="#projects"><span>Projects</span></a>
+            </li>
+
+            <li>
+                <a href="#contact"><span>Contact</span></a>
+            </li>
+        </ul>
+
+        <i class="fa-solid fa-bars" id="menu-icon"></i>
+        <a href="https://github.com/NikoGutk" target="_blank" class="visit-btn">Visit GitHub</a>
+    </header>
+
+    <section id="about" class="about">
+        <div class="about-container">
+            <img src="/files/myfoto.jpg" alt="">
+
+            <div class="info-box">
+
+                <div class="text">
+                    <h3>Hi, I'm</h3>
+                    <h1>Nikolay Gutnyk</h1>
+                    <span>Developer / Data Analyst</span>
+                </div>
+
+                <div class="btn-group">
+                    <div class="btn">Download CV</div>
+                    <a href="#contact">
+                        <div class="btn">Contact</div>
+                    </a>
+                </div>
+
+                <div class="socials">
+                    <a href="https://github.com/NikoGutk" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/nikolay-gutnyk/?locale=en_US" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-square-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="experience">
+
+        <h2 class="section-title">Experience</h2>
+
+        <div class="experience-info">
+
+            <div class="grid">
+                <div class="grid-card">
+                    <i class="fa-solid fa-code"></i>
+                    <span>Frontend Dev</span>
+                    <h3>"<"1 Years</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, est.</p>
+                </div>
+
+                <div class="grid-card">
+                    <i class="fa-solid fa-database"></i>
+                    <span>Data Analyst</span>
+                    <h3>3 Years</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, est.</p>
+                </div>
+
+                <div class="grid-card">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>Finance</span>
+                    <h3>3 Years</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, est.</p>
+                </div>
+
+            </div>
+
+            <img src="/files/myfoto.jpg" alt="">
+        </div>
+
+    </section>
+
+    <section id="projects" class="projects">
+
+        <h2 class="section-title">Recent Projects</h2>
+
+        <div class="projects-grid">
+
+            <div class="project-card">
+                <img src="files/data_cleaning_project/dataClean.png" alt="Data Cleaning">
+                <h3>Data Cleaning Project</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, culpa!</p>
+                <div class="btn-group">
+                    <a href="/project1.html" target="_blank" rel="noopener noreferrer" class="btn">Live Demo</a>
+                    <div class="btn">GitHub Repo</div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <video autoplay loop muted playsinline class ="data-cleaning-preview">
+                    <source src="/files/Data Analytics.webm" type="video/webm">
+                </video>
+                <h3>Project 2</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, culpa!</p>
+                <div class="btn-group">
+                    <div class="btn">Live Demo</div>
+                    <div class="btn">GitHub Repo</div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <video autoplay loop muted playsinline class ="data-cleaning-preview">
+                    <source src="/files/Data Analytics.webm" type="video/webm">
+                </video>
+                <h3>Project 3</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, culpa!</p>
+                <div class="btn-group">
+                    <div class="btn">Live Demo</div>
+                    <div class="btn">GitHub Repo</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        
+        <h2 class="section-title">Contact Me</h2>
+
+        <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+            <div class="input-row">
+                <input type="hidden" name="access_key" value="2dbc68be-17d6-45a3-8334-031ba82825f6">
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="email" name="email" placeholder="Email" required>
+            </div>
+
+            <textarea name="message" placeholder="Your Message..." required></textarea>
+
+            <button type="submit" class="btn">Submit</button>
+        </form>
+</section>
+
+    <footer>
+
+        <ul>
+            <li>
+                <a href="#about">About</a>
+            </li>
+
+            <li>
+                <a href="#experience">Experience</a>
+            </li>
+
+            <li>
+                <a href="#projects">Projects</a>
+            </li>
+
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+        </ul>
+
+        <p class="copyright">© 2026 Nikolay Gutnyk. All rights reserved.</p>
+    </footer>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
