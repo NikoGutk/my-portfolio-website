@@ -338,10 +338,14 @@ section {
     transition: 0.2s ease-in-out;
 }
 
-.project-card img {
+img.data_cleaning {
     position: relative;
-    width: 7rem;
-    right: -10px;
+    width: 10rem;
+}
+
+img.data_pipeline {
+    position: relative;
+    width: 8rem;
 }
 
 .project-card:hover {
