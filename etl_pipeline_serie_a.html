@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Cleaning Project | Nikolay Gutnyk</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <header class="header">
+        <a href="index.html" class="logo"><span>Nikolay Gutnyk</span></a>
+        
+        <ul class="nav-links">
+            <li><a href="index.html"><i class="fa-solid fa-arrow-left"></i> Back to Home</a></li>
+        </ul>
+        
+        <a href="https://github.com/NikoGutk" target="_blank" class="visit-btn">Visit GitHub</a>
+    </header>
+
+    <section class="project-details">
+        
+        <h1 class="section-title" style="margin-top: 5rem;">SQL - Cafe Sales and Data Cleaning&#9749;</h1>
+
+        <div class="project-container">
+            
+           <div class="media-stack">
+    
+             <div class="img-card">
+                <img src="files/data_cleaning_project/before_after_database.webp" alt="Database before and after">
+            </div>
+
+             <div class="img-card">
+                 <img src="files/data_cleaning_project/pie_chart_before.png" alt="Pie Chart before cleaning">
+             </div>
+
+            <div class="img-card">
+                 <img src="files/data_cleaning_project/pie_chart_after.png" alt="Pie Chart after cleaning">
+             </div>
+
+            </div>
+
+
+            <div class="info-content">
+                <h3>Project Overview</h3>
+                <p>
+                    <b>Situation:</b> A raw dataset of <strong>10,000 cafe transactions</strong><br> was ingested with significant quality issues,
+                    including <strong>missing values, incorrect data types (text in numeric fields), and generic "ERROR" strings.</strong> 
+                    This rendered the data unusable for revenue reporting.
+                </p>
+
+                <div class="tech-stack">
+                    <h3>Technologies Used:</h3>
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> SQL</li>
+                        <li><i class="fa-solid fa-check"></i> MySQL</li>
+                    </ul>
+                </div>
+
+                <h3>My steps:</h3>
+                <ul class="features-list">
+                    <li>1. Staging: Created a secure staging environment to prevent data loss.</li>
+                    <li>2. Deduplication: Used window functions to identify and remove duplicate transaction entries.</li>
+                    <li>3. Type Enforcement: Cleaned text errors from numeric columns (REGEXP) and enforced strict INT and DECIMAL data types.</li>
+                    <li>4. Logical Imputation: Instead of deleting rows with missing items, I wrote logic to infer the item name based on its price.</li>
+                    <li>5. Revenue Recovery: Recalculated missing Total Spent values using the formulas, saving 460+ rows from being discarded.</li>
+                    <li>6. Archiving: Segregated completely unfixable data into a garbage_table to maintain a clean "Production" environment without losing audit trails.</li>
+                </ul>
+                <h3>Results:</h3>
+                 <ul class="features-list">
+                    <li>Before: 69% of data was unusable or mathematically incorrect.</li>
+                    <li>After: 99.7% Data Usability: Successfully recovered nearly all transaction records.</li>
+                    <li>Structural Integrity: Converted the table from a flat text file into a strictly typed database (INT, DECIMAL, DATE).</li>
+                    <li>Analysis-Ready: The data is now optimized for BI tools, with 0 math discrepancies and standardized categorical labels.</li>
+                </ul>
+
+                <div class="btn-group" style="margin-top: 2rem;">
+                    <a href="https://github.com/NikoGutk/Cafe-Sales-SQL-Cleaning" target="_blank" rel="noopener noreferrer" class="btn">View Source Code</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p class="copyright">© 2026 Nikolay Gutnyk. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
