@@ -8,9 +8,17 @@ menuIcon.onclick = () => {
 
 let isMouseOverGrid = false;
 const grid = document.querySelector('.grid');
+const cards = document.querySelectorAll('.grid-card');
 
-grid.addEventListener('mouseenter', () => isMouseOverGrid = true);
-grid.addEventListener('mouseleave', () => isMouseOverGrid = false);
+grid.addEventListener('mouseenter', () => {
+    isMouseOverGrid = true;
+
+    cards.forEach(card => card.classList.remove('active'));
+});
+
+grid.addEventListener('mouseleave', () => { 
+    isMouseOverGrid = false;
+});
 
 function autoHover() {
 
@@ -20,8 +28,6 @@ function autoHover() {
         return;
     }
 
-    const cards = document.querySelectorAll('.grid-card');
-
     cards.forEach(card => card.classList.remove('active'));
 
     const randomIndex = Math.floor(Math.random() * cards.length);
@@ -30,13 +36,13 @@ function autoHover() {
     randomCard.classList.add('active');
 
     setTimeout(() => {
-        randomCard.classList.remove('active');
+        
+        if (randomCard.classList.contains('active')) {
+            randomCard.classList.remove('active');
+        }
 
         setTimeout(autoHover, 4000);
+    }, 5000);
+}
 
-    }, 6000);
-} 
-
-setTimeout(autoHover, 2000);
-
-
+setTimeout(autoHover, 3000);
