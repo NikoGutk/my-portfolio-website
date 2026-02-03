@@ -265,7 +265,63 @@ section {
     transition: 0.2s ease-in-out;
 }
 
-.grid-card:hover {
+
+
+
+
+
+.swap-container {
+    display: grid;
+    grid-template-areas: "overlay";
+}
+
+.tech-tags-frontend, .tech-tags-data-analysis, .tech-tags-econ-fin, .tech-tags-agility {
+    font-size: 1.2rem;
+}
+
+.summary-text-grid-card {
+    font-size: 1.2rem;
+}
+
+.tech-tags-frontend, .summary-text-grid-card, .tech-tags-data-analysis, .tech-tags-econ-fin, .tech-tags-agility {
+    grid-area: overlay;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.summary-text-grid-card {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(60px);
+}
+
+.grid-card:hover .tech-tags-frontend,
+.grid-card:hover .tech-tags-data-analysis,
+.grid-card:hover .tech-tags-econ-fin,
+.grid-card:hover .tech-tags-agility,
+
+.grid-card.active .tech-tags-frontend,
+.grid-card.active .tech-tags-data-analysis,
+.grid-card.active .tech-tags-econ-fin,
+.grid-card.active .tech-tags-agility {
+
+    opacity: 0;
+    pointer-events: none;
+}
+
+.grid-card:hover .summary-text-grid-card,
+.grid-card.active .summary-text-grid-card {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+
+
+
+
+
+.grid-card:hover,
+.grid-card.active {
     transform: scale(1.02);
     background-color: #1f4037;
     color: white;
